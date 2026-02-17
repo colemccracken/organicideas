@@ -181,6 +181,38 @@ main {
   padding-bottom: 3.5rem;
 }
 
+.member-confirmed {
+  display: none;
+  padding-top: clamp(3.2rem, 11vh, 7.5rem);
+}
+
+.member-confirmed-card {
+  max-width: 40rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: linear-gradient(
+    165deg,
+    var(--newsletter-wash-a),
+    var(--newsletter-wash-b)
+  );
+  padding: 1.4rem 1.3rem 1.5rem;
+}
+
+.member-confirmed-card p {
+  margin: 0.9rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+
+.member-confirmed-view #site-shell,
+.member-confirmed-view .skip-link {
+  display: none;
+}
+
+.member-confirmed-view .member-confirmed {
+  display: block;
+}
+
 .hero {
   max-width: 48rem;
   padding: 2.2rem 0 1.4rem;

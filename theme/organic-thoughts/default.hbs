@@ -12,6 +12,33 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{asset "css/screen.css"}}" />
+    <script>
+      (function () {
+        try {
+          var url = new URL(window.location.href);
+          var params = url.searchParams;
+          var action = params.get("action");
+          var isMemberConfirm =
+            params.get("success") === "true" &&
+            /^(signin|signup|subscribe|signup-paid)$/.test(action || "");
+
+          if (isMemberConfirm) {
+            params.delete("success");
+            params.delete("action");
+            params.set("confirmed", "1");
+            var next =
+              url.pathname +
+              (params.toString() ? "?" + params.toString() : "") +
+              url.hash;
+            window.history.replaceState({}, "", next);
+          }
+
+          if (params.get("confirmed") === "1") {
+            document.documentElement.classList.add("member-confirmed-view");
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     {{ghost_head}}
   </head>
@@ -21,9 +48,19 @@
     <div class="bg-glow bg-glow-two" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to Main Content</a>
 
-    {{> "site-header"}}
+    <div id="site-shell">
+      {{> "site-header"}}
 
-    {{{body}}}
+      {{{body}}}
+    </div>
+
+    <main id="confirmed-main" class="shell member-confirmed" aria-live="polite">
+      <section class="member-confirmed-card reveal">
+        <p class="eyebrow">Newsletter</p>
+        <h1>You are confirmed.</h1>
+        <p>You are confirmed to receive updates.</p>
+      </section>
+    </main>
 
     {{ghost_foot}}
   </body>
