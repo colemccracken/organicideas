@@ -3,48 +3,27 @@
 <main id="main-content" class="shell">
   <section class="hero reveal">
     <p class="eyebrow">Developer Journal / {{date format="YYYY"}}</p>
-    <h1>Learning to Build While the Builder Keeps Changing</h1>
+    <h1>Thoughts from a software dev with rapidly depreciating skills</h1>
     <p class="hero-copy">
-      Notes from a software developer navigating a world where AI writes more
-      code each month, and the job shifts from typing to taste, direction, and
-      systems thinking.
+      AI is already way better at the how. Maybe we'll stay better at the what?
     </p>
   </section>
 
-  <section class="feature reveal-delay-1" aria-labelledby="feature-title">
-    {{#foreach posts limit="1"}}
-      <div class="feature-meta">
-        <p class="meta-label">Latest Thought</p>
-        <p class="meta-stamp">Thought {{@number}} / {{date format="MMM DD, YYYY"}}</p>
-      </div>
-      <article>
-        <h2 id="feature-title"><a href="{{url}}">{{title}}</a></h2>
-        <p>{{excerpt words="52"}}</p>
-        <a class="read-link" href="{{url}}">Read Thought</a>
-      </article>
-    {{else}}
-      <div class="feature-meta">
-        <p class="meta-label">Latest Thought</p>
-        <p class="meta-stamp">No thoughts published yet</p>
-      </div>
-      <article>
-        <h2 id="feature-title">Your first thought will appear here</h2>
-        <p>
-          Publish a post in Ghost Admin and this featured section will update
-          automatically.
-        </p>
-      </article>
-    {{/foreach}}
-  </section>
-
   <div class="content-layout">
-    <section id="thoughts" class="thought-stream" aria-labelledby="stream-title">
+    <section
+      id="thoughts"
+      class="thought-stream"
+      aria-labelledby="stream-title"
+    >
       <h2 id="stream-title">Recent Thoughts</h2>
 
-      {{#foreach posts limit="9"}}
+      {{#foreach posts limit="3"}}
         <article class="thought-card reveal-delay-2">
           <p class="thought-meta">
-            Thought {{@number}} / {{date format="MMM DD, YYYY"}}
+            Thought
+            {{@number}}
+            /
+            {{date format="MMM DD, YYYY"}}
             {{#if primary_tag}} / {{primary_tag.name}}{{/if}}
           </p>
           <h3><a href="{{url}}">{{title}}</a></h3>
@@ -62,27 +41,14 @@
     </section>
 
     <aside id="newsletter" class="newsletter reveal-delay-4">
-      <h2>Weekly Build Notes</h2>
+      <h2>Thoughts via email</h2>
       <p>
-        One concise email each week with practical lessons from building in the
-        AI era.
+        Subscribe if you want my thoughts to permeate your inbox. I have no idea
+        when that will happen.
       </p>
       <a class="newsletter-button" href="#/portal/signup" data-portal="signup">
-        Join Newsletter
+        Email me
       </a>
-      <p class="small-note">No spam. Leave any time.</p>
     </aside>
   </div>
-
-  <section id="about" class="about reveal-delay-3">
-    <h2>About This Site</h2>
-    <p>
-      {{#if @site.description}}
-        {{@site.description}}
-      {{else}}
-        Organic Thoughts is a running field report on software craft, product
-        taste, and decision-making as AI reshapes the development loop.
-      {{/if}}
-    </p>
-  </section>
 </main>
