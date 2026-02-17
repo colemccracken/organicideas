@@ -46,13 +46,23 @@
 
     <aside id="newsletter" class="newsletter reveal-delay-4">
       <h2>Thoughts via email</h2>
-      <p>
-        Subscribe if you want my thoughts to permeate your inbox. I have no idea
-        when that will happen.
-      </p>
-      <a class="newsletter-button" href="#/portal/signup" data-portal="signup">
-        Get emails
-      </a>
+      <form class="newsletter-form" data-members-form="subscribe">
+        <div class="newsletter-line">
+          <label for="newsletter-email-home">
+            Drop your email for occasional notes.
+          </label>
+          <button type="submit" class="newsletter-link">Subscribe</button>
+        </div>
+        <input
+          id="newsletter-email-home"
+          type="email"
+          data-members-email
+          autocomplete="email"
+          spellcheck="false"
+          placeholder="you@domain.com"
+          required
+        />
+      </form>
     </aside>
   </div>
 </main>

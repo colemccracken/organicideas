@@ -327,50 +327,50 @@ h1 {
   top: 1rem;
 }
 
-.newsletter p {
-  margin: 0 0 0.85rem;
+.newsletter form {
+  margin: 0;
+}
+
+.newsletter-line {
+  margin: 0 0 0.45rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
   color: var(--ink-soft);
 }
 
-.newsletter label {
-  display: block;
-  margin-bottom: 0.35rem;
-  font-size: 0.88rem;
+.newsletter-line label {
+  font-size: 0.95rem;
 }
 
 .newsletter input {
   width: 100%;
   border: 1px solid var(--input-line);
-  border-radius: 0.55rem;
+  border-radius: 0.5rem;
   background: var(--paper-strong);
   color: var(--ink);
-  padding: 0.6rem 0.7rem;
+  padding: 0.55rem 0.7rem;
   font: inherit;
 }
 
-.newsletter button {
-  margin-top: 0.7rem;
-  width: 100%;
-  border: 1px solid var(--accent-deep);
-  border-radius: 0.55rem;
-  background: var(--accent-deep);
-  color: #f5fff8;
-  padding: 0.65rem 0.8rem;
+.newsletter-link {
+  border: 0;
+  background: transparent;
+  color: var(--accent-deep);
+  padding: 0;
+  margin: 0;
   font: inherit;
-  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
   cursor: pointer;
   touch-action: manipulation;
 }
 
-.newsletter button:hover,
-.newsletter button:focus-visible {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.small-note {
-  margin-top: 0.7rem;
-  font-size: 0.8rem;
+.newsletter-link:hover,
+.newsletter-link:focus-visible {
+  color: var(--accent);
 }
 
 .about {
