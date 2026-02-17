@@ -26,7 +26,11 @@ cp .env.example .env
 
 ```bash
 bun run dev:site
+bun run dev:ghost
+bun run dev:ghost:logs
+bun run dev:ghost:down
 bun run theme:zip
+bun run theme:validate
 bun run theme:upload
 bun run theme:publish
 bun run check:dns
@@ -102,6 +106,42 @@ bun run theme:upload
 - `GHOST_ADMIN_KEY`
 
 You can set them in `.env`.
+
+## Local Ghost CSS Testing
+
+Run Ghost locally with your theme mounted live from this repo:
+
+```bash
+bun run dev:ghost
+```
+
+Then:
+
+1. Open `http://localhost:2368/ghost` and complete setup (first run only).
+2. Activate the `organic-thoughts` theme in Ghost Admin.
+3. Edit `theme/organic-thoughts/assets/css/screen.css`.
+4. Refresh `http://localhost:2368` to verify visual changes.
+
+Useful commands:
+
+```bash
+bun run dev:ghost:logs
+bun run dev:ghost:down
+```
+
+Local Ghost data persists under `local/ghost-content` (gitignored).
+
+## CI Auto Deploy on `main`
+
+This repo now includes `/Users/colemccracken/workspace/organicideas/.github/workflows/deploy-theme.yml`:
+
+- Trigger: every push to `main` (and manual `workflow_dispatch`)
+- Steps: validate theme, zip theme, upload + activate on Ghost
+
+Required GitHub repository secrets:
+
+- `GHOST_ADMIN_URL` (example: `https://organic-ideas.ghost.io`)
+- `GHOST_ADMIN_KEY` (`id:secret` Admin API key from Ghost Admin)
 
 ## Optional Weekly Cron
 
