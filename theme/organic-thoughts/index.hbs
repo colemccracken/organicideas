@@ -3,11 +3,10 @@
 <main id="main-content" class="shell">
   <section class="hero reveal">
     <p class="eyebrow">Developer Journal / {{date format="YYYY"}}</p>
-    <h1>AI writes better code, faster</h1>
+    <h1>Thoughts from a software dev with rapidly depreciating skills</h1>
     <p class="hero-copy">
-      It's still pretty dumb though, and at least it doesnt know yet what code
-      is useful to write. Thoughts from a software dev with rapidly depreciating
-      skills
+      AI writes better code, faster. It's still pretty dumb though, and at least
+      it doesnt know yet what code is useful to write.
     </p>
   </section>
 
@@ -17,7 +16,7 @@
       class="thought-stream"
       aria-labelledby="stream-title"
     >
-      <h2 id="stream-title">Recent Thoughts</h2>
+      <h2 id="stream-title">Recent</h2>
 
       {{#foreach posts limit="3"}}
         <article class="thought-card reveal-delay-2">
@@ -40,7 +39,7 @@
       {{/foreach}}
 
       <p class="small-note">
-        <a class="read-link" href="{{@site.url}}/thoughts/">View all Thoughts</a>
+        <a class="read-link" href="{{@site.url}}/thoughts/">View all</a>
       </p>
     </section>
 
@@ -62,6 +61,11 @@
           placeholder="you@domain.com"
           required
         />
+        <p class="newsletter-status" aria-live="polite">
+          <span class="newsletter-check" aria-hidden="true">✓</span>
+          Check your email for the sign-in link.
+        </p>
+        <p class="newsletter-error" data-members-error></p>
       </form>
     </aside>
   </div>
