@@ -1,8 +1,10 @@
 <ul class="nav-list">
+  <li class="nav-thoughts{{#is "home"}} nav-current{{/is}}">
+    <a href="{{@site.url}}/#thoughts">Thoughts</a>
+  </li>
   {{#foreach navigation}}
     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
       <a href="{{url absolute="true"}}">{{label}}</a>
     </li>
   {{/foreach}}
 </ul>
-
