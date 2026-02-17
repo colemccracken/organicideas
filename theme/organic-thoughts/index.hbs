@@ -41,7 +41,7 @@
     <section id="thoughts" class="thought-stream" aria-labelledby="stream-title">
       <h2 id="stream-title">Recent Thoughts</h2>
 
-      {{#foreach posts from="2" limit="9"}}
+      {{#foreach posts limit="9"}}
         <article class="thought-card reveal-delay-2">
           <p class="thought-meta">
             Thought {{@number}} / {{date format="MMM DD, YYYY"}}
@@ -86,4 +86,3 @@
     </p>
   </section>
 </main>
-
