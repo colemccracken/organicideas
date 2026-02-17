@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{#post}}
+  <main id="main-content" class="shell post-page">
+    <article class="post-full {{post_class}}">
+      <header class="post-header reveal">
+        <p class="eyebrow">
+          Thought / {{date format="MMM DD, YYYY"}}
+          {{#if primary_tag}} / {{primary_tag.name}}{{/if}}
+        </p>
+        <h1>{{title}}</h1>
+      </header>
+
+      {{#if feature_image}}
+        <figure class="post-image reveal-delay-1">
+          <img src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
+          {{#if feature_image_caption}}
+            <figcaption>{{feature_image_caption}}</figcaption>
+          {{/if}}
+        </figure>
+      {{/if}}
+
+      <section class="post-content reveal-delay-2">
+        {{content}}
+      </section>
+
+      <footer class="post-footer">
+        <a class="read-link" href="{{@site.url}}/#thoughts">Back to Thoughts</a>
+      </footer>
+    </article>
+  </main>
+{{/post}}
+

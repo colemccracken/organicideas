@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Organic Ideas | Building in the AI Era</title>
+    <meta
+      name="description"
+      content="A developer's notes on building software as AI gets better at writing code."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-one" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow-two" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to Main Content</a>
+
+    <header class="site-header shell">
+      <a class="brand" href="/">
+        <span class="brand-log">OI</span>
+        Organic Ideas
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#thoughts">Thoughts</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" class="shell">
+      <section class="hero reveal">
+        <p class="eyebrow">Developer Journal / 2026</p>
+        <h1>Learning to Build While the Builder Keeps Changing</h1>
+        <p class="hero-copy">
+          Notes from a software developer navigating a world where AI writes
+          more code each month, and the job shifts from typing to taste,
+          direction, and systems thinking.
+        </p>
+      </section>
+
+      <section class="feature reveal-delay-1" aria-labelledby="feature-title">
+        <div class="feature-meta">
+          <p class="meta-label">Latest Thought</p>
+          <p class="meta-stamp">Thought 0 / Runtime Log #014</p>
+        </div>
+        <article>
+          <h2 id="feature-title">The New Bottleneck Is Judgment</h2>
+          <p>
+            AI now drafts service layers faster than teams can describe the
+            problem. Speed stopped being the constraint. Clarity did. The real
+            work is deciding what should exist, what can be deleted, and what
+            deserves maintenance.
+          </p>
+          <a class="read-link" href="#">Read Thought</a>
+        </article>
+      </section>
+
+      <div class="content-layout">
+        <section
+          id="thoughts"
+          class="thought-stream"
+          aria-labelledby="stream-title"
+        >
+          <h2 id="stream-title">Recent Thoughts</h2>
+
+          <article class="thought-card reveal-delay-2">
+            <p class="thought-meta">Thought 1 / Feb 14, 2026 / Workflow</p>
+            <h3>Prompt Specs Replaced Half My Old Planning Docs</h3>
+            <p>
+              Tight prompts now function as executable plans. The value is in
+              constraints, not verbosity.
+            </p>
+          </article>
+
+          <article class="thought-card reveal-delay-3">
+            <p class="thought-meta">Thought 2 / Feb 10, 2026 / Architecture</p>
+            <h3>Smaller Services, Sharper Contracts</h3>
+            <p>
+              As generation gets cheaper, integration risk dominates. Clear
+              contracts are now the main durability tool.
+            </p>
+          </article>
+
+          <article class="thought-card reveal-delay-4">
+            <p class="thought-meta">Thought 3 / Feb 04, 2026 / Career</p>
+            <h3>Senior Means Owning Outcomes, Not Lines of Code</h3>
+            <p>
+              The best developers in this cycle are editors of systems and
+              incentives, not human code formatters.
+            </p>
+          </article>
+        </section>
+
+        <aside id="newsletter" class="newsletter reveal-delay-4">
+          <h2>Weekly Build Notes</h2>
+          <p>
+            One concise email each week with practical lessons from building in
+            the AI era.
+          </p>
+          <form action="#" method="post">
+            <label for="email">Email address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              spellcheck="false"
+              placeholder="you@domain.com…"
+              required
+            />
+            <button type="submit">Join Newsletter</button>
+          </form>
+          <p class="small-note">No spam. Leave any time.</p>
+        </aside>
+      </div>
+
+      <section id="about" class="about reveal-delay-3">
+        <h2>About This Site</h2>
+        <p>
+          Organic Ideas is a running field report on software craft, product
+          taste, and decision-making as AI reshapes the development loop.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

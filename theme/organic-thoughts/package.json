@@ -1,0 +1,24 @@
+{
+  "name": "organic-thoughts",
+  "description": "Minimal journal-style Ghost theme for Organic Ideas",
+  "version": "0.1.0",
+  "author": {
+    "name": "Organic Ideas",
+    "email": "hello@organicideas.me",
+    "url": "https://www.organicideas.me"
+  },
+  "keywords": [
+    "ghost",
+    "ghost-theme",
+    "minimal",
+    "journal"
+  ],
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "config": {
+    "posts_per_page": 9,
+    "card_assets": true
+  },
+  "license": "MIT"
+}
