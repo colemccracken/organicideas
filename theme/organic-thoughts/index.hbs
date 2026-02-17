@@ -52,6 +52,10 @@
           </label>
           <button type="submit" class="newsletter-link">Subscribe</button>
         </div>
+        <p class="newsletter-status" aria-live="polite">
+          <span class="newsletter-check" aria-hidden="true">✓</span>
+          Check your email to confirm.
+        </p>
         <input
           id="newsletter-email-home"
           type="email"
@@ -61,10 +65,6 @@
           placeholder="you@domain.com"
           required
         />
-        <p class="newsletter-status" aria-live="polite">
-          <span class="newsletter-check" aria-hidden="true">✓</span>
-          Check your email for the sign-in link.
-        </p>
         <p class="newsletter-error" data-members-error></p>
       </form>
     </aside>

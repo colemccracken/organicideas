@@ -382,7 +382,7 @@ h1 {
 
 .newsletter-status,
 .newsletter-error {
-  margin: 0.55rem 0 0;
+  margin: 0;
   font-size: 0.9rem;
 }
 
@@ -391,6 +391,7 @@ h1 {
   align-items: center;
   gap: 0.4rem;
   color: var(--accent-deep);
+  margin-bottom: 0.45rem;
 }
 
 .newsletter-check {
@@ -415,13 +416,17 @@ h1 {
   pointer-events: none;
 }
 
-.newsletter form.success .newsletter-line,
-.newsletter form.success input {
+.newsletter form.success .newsletter-line {
   display: none;
 }
 
 .newsletter form.success .newsletter-status {
   display: inline-flex;
+}
+
+.newsletter form.success input {
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .newsletter form.error .newsletter-error {
