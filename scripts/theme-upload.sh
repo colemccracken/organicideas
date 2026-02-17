@@ -4,6 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 ZIP_PATH="${REPO_ROOT}/dist/organic-thoughts.zip"
+THEME_NAME="${THEME_NAME:-organic-thoughts}"
 
 if [[ -f "${REPO_ROOT}/.env" ]]; then
   set -a
@@ -79,5 +80,20 @@ if [[ "${HTTP_CODE}" -lt 200 || "${HTTP_CODE}" -ge 300 ]]; then
 fi
 
 echo "Theme upload success (HTTP ${HTTP_CODE})."
-cat /tmp/organic-thoughts-theme-upload.json
 
+ACTIVATE_URL="${GHOST_ADMIN_URL%/}/ghost/api/admin/themes/${THEME_NAME}/activate/"
+ACTIVATE_CODE="$(
+  curl -sS -o /tmp/organic-thoughts-theme-activate.json -w "%{http_code}" \
+    -X PUT "${ACTIVATE_URL}" \
+    -H "Authorization: Ghost ${TOKEN}" \
+    -H "Accept-Version: v6.0"
+)"
+
+if [[ "${ACTIVATE_CODE}" -lt 200 || "${ACTIVATE_CODE}" -ge 300 ]]; then
+  echo "Theme activation failed (HTTP ${ACTIVATE_CODE})."
+  cat /tmp/organic-thoughts-theme-activate.json
+  exit 1
+fi
+
+echo "Theme activation success (HTTP ${ACTIVATE_CODE})."
+cat /tmp/organic-thoughts-theme-activate.json
