@@ -1,11 +1,11 @@
 {
   "name": "organic-thoughts",
-  "description": "Minimal journal-style Ghost theme for Organic Ideas",
+  "description": "Minimal journal-style Ghost theme for Organic Thoughts",
   "version": "0.1.0",
   "author": {
-    "name": "Organic Ideas",
-    "email": "hello@organicideas.me",
-    "url": "https://www.organicideas.me"
+    "name": "Organic Thoughts",
+    "email": "hello@organicthoughts.me",
+    "url": "https://www.organicthoughts.me"
   },
   "keywords": [
     "ghost",

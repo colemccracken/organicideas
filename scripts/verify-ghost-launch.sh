@@ -9,7 +9,7 @@ if [[ -f "${REPO_ROOT}/.env" ]]; then
   set +a
 fi
 
-DOMAIN="${1:-organicideas.me}"
+DOMAIN="${1:-organicthoughts.me}"
 WWW_DOMAIN="www.${DOMAIN}"
 CANONICAL_DOMAIN="${CANONICAL_DOMAIN:-${DOMAIN}}"
 CHECK_DNS_RESOLVER="${CHECK_DNS_RESOLVER:-1.1.1.1}"

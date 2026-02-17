@@ -1,6 +1,6 @@
-# Organic Ideas Ops
+# Organic Thoughts Ops
 
-This repository is for operational checks and design-source docs for `organicideas.me` on Ghost(Pro).
+This repository is for operational checks and design-source docs for `organicthoughts.me` on Ghost(Pro).
 
 ## Scope
 
@@ -36,7 +36,7 @@ bun run check:health
 
 ## Environment
 
-See `/Users/colemccracken/workspace/organicideas/.env.example` for supported values:
+See `.env.example` for supported values:
 
 - `CANONICAL_DOMAIN`
 - `CHECK_DNS_RESOLVER`
@@ -59,20 +59,19 @@ Use this repo as design source, even with Ghost as content source:
 
 Minimal blog-style prototype files:
 
-- `/Users/colemccracken/workspace/organicideas/site/index.html`
-- `/Users/colemccracken/workspace/organicideas/site/styles.css`
+- `site/index.html`
+- `site/styles.css`
 
 Preview locally:
 
 ```bash
-cd /Users/colemccracken/workspace/organicideas/site
+cd site
 python3 -m http.server 4173
 ```
 
 Hot reload:
 
 ```bash
-cd /Users/colemccracken/workspace/organicideas
 bun run dev:site
 ```
 
@@ -84,16 +83,15 @@ To connect this design to live Ghost data, convert it into a Ghost theme:
 
 Theme scaffold is available at:
 
-- `/Users/colemccracken/workspace/organicideas/theme/organic-thoughts/default.hbs`
-- `/Users/colemccracken/workspace/organicideas/theme/organic-thoughts/index.hbs`
-- `/Users/colemccracken/workspace/organicideas/theme/organic-thoughts/post.hbs`
-- `/Users/colemccracken/workspace/organicideas/theme/organic-thoughts/page.hbs`
-- `/Users/colemccracken/workspace/organicideas/theme/organic-thoughts/assets/css/screen.css`
+- `theme/organic-thoughts/default.hbs`
+- `theme/organic-thoughts/index.hbs`
+- `theme/organic-thoughts/post.hbs`
+- `theme/organic-thoughts/page.hbs`
+- `theme/organic-thoughts/assets/css/screen.css`
 
 Publish commands:
 
 ```bash
-cd /Users/colemccracken/workspace/organicideas
 bun run theme:zip
 bun run theme:upload
 ```
@@ -103,10 +101,10 @@ bun run theme:upload
 - `GHOST_ADMIN_URL`
 - `GHOST_ADMIN_KEY`
 
-You can set them in `/Users/colemccracken/workspace/organicideas/.env`.
+You can set them in `.env`.
 
 ## Optional Weekly Cron
 
 ```bash
-0 9 * * 1 cd /Users/colemccracken/workspace/organicideas && bun run check:health >> /Users/colemccracken/workspace/organicideas/health.log 2>&1
+0 9 * * 1 cd /path/to/repo && bun run check:health >> /path/to/repo/health.log 2>&1
 ```

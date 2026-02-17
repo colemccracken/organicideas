@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-THEME_DIR="/Users/colemccracken/workspace/organicideas/theme/organic-thoughts"
-DIST_DIR="/Users/colemccracken/workspace/organicideas/dist"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+THEME_DIR="${REPO_ROOT}/theme/organic-thoughts"
+DIST_DIR="${REPO_ROOT}/dist"
 ZIP_PATH="${DIST_DIR}/organic-thoughts.zip"
 
 if ! command -v zip >/dev/null 2>&1; then
@@ -24,4 +27,3 @@ rm -f "${ZIP_PATH}"
 )
 
 echo "Created theme zip: ${ZIP_PATH}"
-
