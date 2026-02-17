@@ -343,6 +343,13 @@ h3 a:focus-visible {
   top: 1rem;
 }
 
+.newsletter-inline {
+  position: static;
+  top: auto;
+  max-width: 30rem;
+  margin-bottom: 1rem;
+}
+
 .newsletter p {
   margin: 0 0 0.85rem;
   color: var(--ink-soft);
@@ -478,6 +485,10 @@ h3 a:focus-visible {
 
 .post-footer {
   margin-top: 2rem;
+}
+
+.post-footer .read-link {
+  display: inline-block;
 }
 
 a:focus-visible,

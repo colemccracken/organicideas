@@ -1,0 +1,27 @@
+{{!< default}}
+
+<main id="main-content" class="shell page-page thoughts-page">
+  <section class="thought-stream" aria-label="All Thoughts">
+    {{#get "posts" limit="100" include="tags" order="published_at desc"}}
+      {{#foreach posts}}
+        <article class="thought-card reveal-delay-1">
+          <p class="thought-meta">
+            Thought
+            {{@number}}
+            /
+            {{date format="MMM DD, YYYY"}}
+            {{#if primary_tag}} / {{primary_tag.name}}{{/if}}
+          </p>
+          <h3><a href="{{url}}">{{title}}</a></h3>
+          <p>{{excerpt words="34"}}</p>
+        </article>
+      {{else}}
+        <article class="thought-card reveal-delay-1">
+          <p class="thought-meta">Thoughts will appear here</p>
+          <h3>Publish your next thought</h3>
+          <p>New posts in Ghost are automatically rendered in this stream.</p>
+        </article>
+      {{/foreach}}
+    {{/get}}
+  </section>
+</main>
